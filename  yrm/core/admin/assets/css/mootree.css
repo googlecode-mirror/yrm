@@ -1,0 +1,50 @@
+.mooTree_node {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	white-space: nowrap;
+	height: 19px;
+}
+
+.mooTree_node:hover {
+	background: #E0E8EF;
+}
+
+.mooTree_text {
+	padding-top: 2px;
+	height: 16px;
+}
+
+.mooTree_img {
+	float: left;
+	width: 18px;
+	height: 18px;
+	overflow: hidden;
+}
+
+.mooTree_selected	 {
+	background-color: #e0f0ff;
+	font-weight: bold;
+}
+
+.yos_tree_checkbox_container {
+	float: left;
+}
+
+.yos_tree_checkbox {
+	float: left;
+	margin: 0px 1px 0px 1px;
+	height: 15px;
+	padding-top: 3px;
+}
+
+.yos_tree_img {
+	height: 12px;
+}
+.icon-32-import
+{
+	background-image: url(../images/icon-32/resource_import.png);
+}
+.icon-32-export
+{
+	background-image: url(../images/icon-32/resource_export.png);
+}

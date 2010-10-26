@@ -1,0 +1,185 @@
+.loading {
+	padding: 10px;
+	background: url(../images/spinner.gif) center no-repeat;
+}
+.yrm_comment {
+	background: #fff;
+	padding: 10px;
+}
+.yrm_comment td {
+	padding: 5px 5px 0px 5px;
+}
+
+.yos_hidden{
+	display: none;
+}
+
+/*****************cpanel********************/
+.icon-48-control-panel {
+	background-image: url(../images/icon-48/cpanel.png);
+}
+
+.cpanel_icon {
+	width: 80px;
+	height: 80px;
+	display: block;
+	border: 1px solid #ddd;
+}
+
+.cpanel_icon:hover {
+	text-decoration: none;
+}
+
+#cpanel_icons {
+	text-align: center;
+}
+
+#cpanel_icons td {
+	padding: 10px 20px;
+}
+
+#cpanel_resources {
+	background: url(../images/resources.png) no-repeat center;
+}
+
+#cpanel_plugins {
+	background: url(../images/plugins.png) no-repeat center;
+}
+
+#cpanel_roles {
+	background: url(../images/roles.png) no-repeat center;
+}
+
+#cpanel_groups {
+	background: url(../images/groups.png) no-repeat center;
+}
+
+#cpanel_users {
+	background: url(../images/users.png) no-repeat center;
+}
+
+#cpanel_packages {
+	background: url(../images/packages.png) no-repeat center;
+}
+
+#cpanel_payment_method {
+	background: url(../images/payment_method.png) no-repeat center;
+}
+
+#cpanel_order {
+	background: url(../images/order.png) no-repeat center;
+}
+
+/*****************plugins********************/
+root { 
+    display: block;
+}
+
+/*****************resources********************/
+.icon-48-resources {
+	background-image: url(../images/icon-48/resources.png);
+}
+
+/*****************roles*************************/
+.icon-48-roles {
+	background-image: url(../images/icon-48/roles.png);
+}
+
+.icon-32-groups {
+	background-image: url(../images/icon-32/groups.png);
+}
+
+.icon-32-packages{
+	background-image: url(../images/icon-32/packages.png);
+}
+
+.icon-32-roles{
+	background-image: url(../images/icon-32/roles.png);
+}
+
+.icon-32-resources {
+	background-image: url(../images/icon-32/resources.png);
+}
+
+.icon-32-resources_banned {
+	background-image: url(../images/icon-32/resources_banned.png);
+}
+
+.icon-32-users {
+	background-image: url(../images/icon-32/users.png);
+}
+
+/*****************groups********************/
+.icon-48-groups {
+	background-image: url(../images/icon-48/groups.png);
+}
+
+/*****************users********************/
+.icon-48-users {
+	background-image: url(../images/icon-48/users.png);
+}
+
+.icon-32-groups {
+	background-image: url(../images/icon-32/groups.png);
+}
+
+.icon-32-packages{
+	background-image: url(../images/icon-32/packages.png);
+}
+
+.icon-32-roles{
+	background-image: url(../images/icon-32/roles.png);
+}
+
+.icon-32-resources {
+	background-image: url(../images/icon-32/resources.png);
+}
+
+.icon-32-resources_banned {
+	background-image: url(../images/icon-32/resources_banned.png);
+}
+
+.icon-32-users {
+	background-image: url(../images/icon-32/users.png);
+}
+
+.tip {
+	background-color: #333;
+	padding: 1px;
+}
+
+.tip-title {
+	color: #fff;
+	background-color: #666;
+	font-size: 14px;
+	padding: 1px;
+}
+
+.tip-text {
+	color: #fff;
+	padding: 5px;
+}
+
+.yos_tree_e_img {
+	cursor: pointer;
+}
+
+/*****************packages********************/
+.icon-48-packages {
+	background-image: url(../images/icon-48/packages.png);
+}
+
+/*****************payment method********************/
+.icon-48-payment_method {
+	background-image: url(../images/icon-48/payment_method.png);
+}
+
+/*****************order********************/
+.icon-48-order {
+	background-image: url(../images/icon-48/order.png);
+}
+/*****************Import********************/
+.icon-48-import
+{
+	background-image: url(../images/icon-48/resource_import.png);
+}

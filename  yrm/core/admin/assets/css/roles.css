@@ -1,0 +1,23 @@
+.icon-32-groups {
+	background-image: url(../images/icon-32/groups.png);
+}
+
+.icon-32-packages{
+	background-image: url(../images/icon-32/packages.png);
+}
+
+.icon-32-roles{
+	background-image: url(../images/icon-32/roles.png);
+}
+
+.icon-32-resources {
+	background-image: url(../images/icon-32/resources.png);
+}
+
+.icon-32-resources_banned {
+	background-image: url(../images/icon-32/resources_banned.png);
+}
+
+.icon-32-users {
+	background-image: url(../images/icon-32/users.png);
+}

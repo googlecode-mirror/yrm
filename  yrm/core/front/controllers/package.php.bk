@@ -1,0 +1,153 @@
+<?php
+/**
+ * @version	$Id: yos_resources_manager.php $
+ * @package	YRM
+ * @subpackage	Component
+ * @copyright	Copyright (C) 2009 YOS.,JSC. All rights reserved.
+ * @license		Commercial
+ */
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die( 'Restricted access' );
+
+class YRMControllerPackage extends  YRMController
+{
+	
+	function checkout(){
+		global $mainframe, $option;		
+		$view=$this->getView('package','html');	
+		if ($model=& $this->getModel('package')){
+			$view->setModel($model);
+			$view->setLayout('checkout');				
+		}
+		$view->display();
+	}
+	function confirm(){	
+		
+		$d = array();
+		$d['payment_method_id'] = JRequest::getInt('payment_method_id');
+		$d['packageid'] = JRequest::getInt('packageid');
+		$d['return_url'] = base64_decode(JRequest::getString('return_url'));
+		
+		$model=& $this->getModel('package');
+		$package = $model->getPackage($d['packageid']);
+		$payment = $model->getPaymentMethod($d['payment_method_id']);
+		
+		$d['amount'] = $package->value;
+		$d['currency_code'] = $package->currency_code;		
+		
+		$order_number = $model->insertOrder($d['packageid']);		
+	
+		$path = JPATH_ADMINISTRATOR.DS.'components'.DS.'com_yos_resources_manager'.DS.'paymentclass';
+		
+		if ( $payment->payment_class ) {
+	
+	    	if (include_once($path.DS.$payment->payment_class )) {
+	    		eval( "\$_PAYMENT = new ".str_replace('.php', '', $payment->payment_class)."();");
+	    	}
+		}else {
+	    	include( $path."ps_payment.php" );
+	    	$_PAYMENT = new ps_payment();
+		}
+		
+		$_PAYMENT-> process_payment($order_number, $d['amount'], &$d);
+		
+		$view=$this->getView('package','html');	
+		$view->setModel($model);
+		$view->setLayout('checkout');			
+	
+	}
+	function ipn(){
+		global $option, $mainframe;
+		
+		$model		= &	$this->getModel('package');
+		$order_id   = JRequest::getInt('order_id');
+		$mode      = JRequest::getInt('mode',1);
+		require('');		
+		
+		if ($order_id) {
+			/*
+			Simple IPN processing script
+			based on code from the "PHP Toolkit" provided by PayPal
+			*/
+			
+			//$url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+			if ($mode) {
+				$paypal = 'www.sandbox.paypal.com';
+			}
+			else {
+				$paypal = 'www.paypal.com';
+			}
+			$url = 'https://'.$paypal.'/cgi-bin/webscr';			
+			
+			$postdata = '';
+			foreach($_POST as $i => $v) {
+				$postdata .= $i.'='.urlencode($v).'&';
+			}
+			
+			$payment_status = trim(stripslashes($_POST['payment_status']));
+			
+//			$handle = fopen('text.txt','w+');
+//			fwrite($handle, $info);
+//			fwrite($handle,$postdata);
+//			fclose($handle);
+			
+			
+			$postdata .= 'cmd=_notify-validate';			
+			$web = parse_url($url);
+			if ($web['scheme'] == 'https') { 
+				$web['port'] = 443;  
+				$ssl = 'ssl://'; 
+			} else { 
+				$web['port'] = 80;
+				$ssl = ''; 
+			}
+			
+			$fp = @fsockopen($ssl.$web['host'], $web['port'], $errnum, $errstr, 30);
+			
+			if (!$fp) { 
+				echo $errnum.': '.$errstr;
+				
+			} else {
+				fputs($fp, "POST ".$web['path']." HTTP/1.1\r\n");
+				fputs($fp, "Host: ".$web['host']."\r\n");
+				fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");
+				fputs($fp, "Content-length: ".strlen($postdata)."\r\n");
+				fputs($fp, "Connection: close\r\n\r\n");
+				fputs($fp, $postdata . "\r\n\r\n");
+			
+				while(!feof($fp)) { 
+					$info[] = @fgets($fp, 1024); 
+				}
+				fclose($fp);
+				
+				$info = implode(',', $info);
+				
+				if (eregi('VERIFIED', $info)) { 
+					if (eregi ("Completed", $payment_status)) {
+						// yes valid, f.e. change payment status
+						$rs = $model->updateOrder($order_id);
+					}
+					elseif (eregi ("Refunded", $payment_status)) {
+						$rs = $model->updateOrderRefunded($order_id);
+					}
+				
+					//end here
+				} else {
+					// invalid, log error or something
+				}
+//				fclose($handle);
+			}
+		}
+	}
+	function result(){
+		
+		$model		= &	$this->getModel('package');
+		$view=$this->getView('package','html');	
+		$view->setModel($model);
+		$view->setLayout('result');		
+		$view->display();
+	}
+}
+
+
+?>

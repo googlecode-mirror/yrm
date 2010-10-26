@@ -1,0 +1,5 @@
+<install type="paymentclass">
+	<name>authorize</name>
+	<classname>authorize</classname>
+	<description>payment class for payment via authorize</description>	
+</install>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param name="debugRequest" type="radio" default="0" label="CPANEL_DEBUG" description="CPANEL_DEBUG_DES">
+			<option value="0">CPANEL_PARAM_NO</option>
+			<option value="1">CPANEL_PARAM_YES</option>
+		</param>
+		<param name="offsetTimeMax" type="text" default="3" label="CPANEL_OFFSET_TIME" description="CPANEL_OFFSET_TIME_DES" />
+		<param name="ignoreVar" type="text" default="__utma||__utmz||__utmc" label="CPANEL_IGNORE_VARS" description="CPANEL_IGNORE_VARS_DES" size="50" />
+	</params>
+</config>

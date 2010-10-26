@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>YOS Resources Manager</name>
+	<author>Yopensource.com</author>
+	<creationDate>May 2010</creationDate>
+	<copyright>Copyright (C) 2009 Yopensource.com. All rights reserved.</copyright>
+	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>yopensource@gmail.com</authorEmail>
+	<authorUrl>www.yopensource.com</authorUrl>
+	<version>0.8.0</version>
+	<description>Plugin Description</description>
+	<files>
+		<filename plugin="yos_resources_manager">yos_resources_manager.php</filename>
+	</files>
+	<languages folder="languages">
+		<language tag="en-GB">en-GB.plg_system_yos_resources_manager.ini</language>
+	</languages>
+	<params/>
+</install>
+

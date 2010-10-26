@@ -1,0 +1,44 @@
+.icon-32-groups {
+	background-image: url(../images/icon-32/groups.png);
+}
+
+.icon-32-packages{
+	background-image: url(../images/icon-32/packages.png);
+}
+
+.icon-32-roles{
+	background-image: url(../images/icon-32/roles.png);
+}
+
+.icon-32-resources {
+	background-image: url(../images/icon-32/resources.png);
+}
+
+.icon-32-resources_banned {
+	background-image: url(../images/icon-32/resources_banned.png);
+}
+
+.icon-32-users {
+	background-image: url(../images/icon-32/users.png);
+}
+
+.tip {
+	background-color: #333;
+	padding: 1px;
+}
+
+.tip-title {
+	color: #fff;
+	background-color: #666;
+	font-size: 14px;
+	padding: 1px;
+}
+
+.tip-text {
+	color: #fff;
+	padding: 5px;
+}
+
+.yos_tree_e_img {
+	cursor: pointer;
+}

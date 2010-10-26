@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0" method="upgrade">
+  <name>yos_resources_manager</name>
+  <author>YOS Team</author>
+  <creationDate>May 2009</creationDate>
+  <copyright>Copyright (C) 2009 YOS.,JSC</copyright>
+  <license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+  <authorEmail>yopensource@gmail.com</authorEmail>
+  <authorUrl>www.yopensource.com</authorUrl>
+  <version>0.9.3</version>
+  <description>YOS Resources Manager</description>
+	<files folder="front">
+      	<folder>assets</folder>
+      	<folder>controllers</folder>
+      	<folder>models</folder>
+      	<folder>paymentclass</folder>
+      	<folder>views</folder>
+      	<filename>controller.php</filename>
+      	<filename>index.html</filename>
+      	<filename>yos_resources_manager.php</filename>
+	</files>
+	<languages folder="front">
+		<language tag="en-GB">languages/en-GB.com_yos_resources_manager.ini</language>
+	</languages>
+	<administration>
+		<files folder="admin">
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>install</folder>
+			<folder>models</folder>			
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>yos_resources_manager.php</filename>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">languages/en-GB.com_yos_resources_manager.ini</language>
+		</languages>
+		<menu img="components/com_yos_resources_manager/assets/images/icon-16/main.png">YOS Resources Manager</menu>
+		<submenu>
+			<menu view="resources" img="components/com_yos_resources_manager/assets/images/icon-16/resources.png">Resourcces</menu>
+			<menu view="plugins" img="components/com_yos_resources_manager/assets/images/icon-16/plugins.png">Plugins</menu>
+			<menu view="roles" img="components/com_yos_resources_manager/assets/images/icon-16/roles.png">Roles</menu>
+			<menu view="groups" img="components/com_yos_resources_manager/assets/images/icon-16/groups.png">Groups</menu>
+			<menu view="users" img="components/com_yos_resources_manager/assets/images/icon-16/users.png">Users</menu>
+			<menu view="packages" img="components/com_yos_resources_manager/assets/images/icon-16/packages.png">Packages</menu>
+			<menu view="payment_method" img="components/com_yos_resources_manager/assets/images/icon-16/payment_method.png">Payment Method</menu>
+			<menu view="order" img="components/com_yos_resources_manager/assets/images/icon-16/order.png">Order</menu>
+			<menu view="version" img="components/com_yos_resources_manager/assets/images/icon-16/about.png">About</menu>
+		</submenu>
+	</administration>
+	<installfile>install/install.php</installfile>
+	<uninstallfile>install/uninstall.php</uninstallfile>
+  	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install/install.sql</file>
+		</sql>
+		</install>
+		<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">install/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	
+	<params />
+
+	<modules />
+
+	<plugins>
+		<plugin plugin="yos_resources_manager" group="system">
+			<files folder="plg_system_yos_resources_manager">
+				<file>yos_resources_manager.php</file>
+				<file>yos_resources_manager.xml</file>
+			</files>
+			<languages folder="plg_system_yos_resources_manager/languages">
+				<language tag="en-GB">en-GB.plg_system_yos_resources_manager.ini</language>
+			</languages>
+		</plugin>
+		<plugin plugin="yos_resources_manager" group="user">
+			<files folder="plg_user_yos_resources_manager">
+				<file>yos_resources_manager.php</file>
+				<file>yos_resources_manager.xml</file>
+			</files>
+			<languages folder="plg_user_yos_resources_manager/languages">
+				<language tag="en-GB">en-GB.plg_user_yos_resources_manager.ini</language>
+			</languages>
+		</plugin>
+	</plugins>
+</install>
+
+

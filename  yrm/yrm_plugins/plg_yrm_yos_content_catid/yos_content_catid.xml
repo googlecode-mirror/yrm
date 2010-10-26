@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="yrm">
+	<name>YOS content catid</name>
+	<author>YOS team</author>
+	<creationDate>Aug 2009</creationDate>
+	<copyright>www.yopensource.com</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>yopensource@gmail.com</authorEmail>
+	<authorUrl>yopensource.com</authorUrl>
+	<version>0.6 beta</version>
+	<description>Plugin Description</description>
+	<files>
+		<filename plugin="yos_content_catid">yos_content_catid.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_yrm_yos_content_catid.ini</language>
+	</languages>
+	<params/>
+</install>

@@ -1,0 +1,59 @@
+#authorize .left
+{
+	float:left;
+	height:20px;
+	line-height:20px;
+	padding-right:10px;
+	text-align:right;
+	width:171px;
+}
+#authorize .right
+{
+	float:left;
+}
+#authorize .clr
+{
+	clear:both;
+}
+#authorize form div
+{
+	margin:5px 0;
+}
+#authorize .special
+{
+	line-height:40px;
+}
+#authorize .button
+{
+	margin:10px 0 0 180px;
+}
+.pay_left
+{
+	float:left;
+	width:230px;
+}
+.pay_right
+{
+float:left;
+}
+.pay_center
+{
+	padding-left:20px;
+}
+#authorize .bottom
+{
+	height:30px;
+	margin:10px 0 0 180px;
+	width:200px;
+}
+#authorize .bot_left
+{
+	float:left;
+	padding:3px 8px 2px;
+}
+#authorize .bot_right
+{
+	float:left;
+	padding:3px 8px 2px;
+}
+
